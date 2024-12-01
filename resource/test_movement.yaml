@@ -1,0 +1,16 @@
+unit_moves:
+    - moving_type: rotate
+      direction: right
+      speed: 90.0
+      target:
+        angle: 90.0
+    - moving_type: straight
+      direction: forward
+      speed: 0.3
+      distance: 1.0
+    - moving_type: rotate
+      direction: left
+      speed: 90.0
+      target:
+        angle: 90.0
+

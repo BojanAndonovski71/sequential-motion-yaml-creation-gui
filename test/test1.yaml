@@ -1,0 +1,13 @@
+unit_moves:
+- direction: forward
+  distance: 1.0
+  moving_type: straight
+  speed: 0.2
+- direction: forward
+  distance: 1.0
+  moving_type: straight
+  speed: 0.3
+- direction: forward
+  distance: 0.5
+  moving_type: straight
+  speed: 0.3

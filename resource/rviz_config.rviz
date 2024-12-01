@@ -1,0 +1,11 @@
+# Global options
+Fixed Frame=base_link
+
+# Robot Model display
+Visualization Manager.RobotModel.Class=rviz_default_plugins/RobotModel
+Visualization Manager.RobotModel.Description File=/home/bojan/ros2_movement_ws_py/src/movement_controller/resource/turtlebot_simple.urdf
+Visualization Manager.RobotModel.Enabled=true
+
+# TF display
+Visualization Manager.TF.Class=rviz_default_plugins/TF
+Visualization Manager.TF.Enabled=true
