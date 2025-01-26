@@ -118,6 +118,6 @@ git commit -m "Add your feature"
 ## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-Contact
-Author: Bojan Andonovski
-GitHub: BojanAndonovski71
+## Contact
+- Author: Bojan Andonovski
+- GitHub: BojanAndonovski71
