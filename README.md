@@ -55,7 +55,7 @@ $ source install/setup.bash
 Ensure ROS2 is installed on your system.
 Install any missing Python dependencies for the GUI:
 ```
-pip install tkinter pyyaml
+$ pip install tkinter pyyaml
 ```
 
 ## Usage
@@ -64,31 +64,27 @@ Run the YAML GUI:
 ```
 ros2 run movement_controller yaml_gui
 ```
-Define movements (rotations and straight-line motions) and save them as a YAML file.
+- Define movements (rotations and straight-line motions) and save them as a YAML file.
 2. Execute Movements:
-Launch the movement controller and RViz:
-bash
-Copy
-Edit
-ros2 launch movement_controller movement_rviz.launch.py
+- Launch the movement controller and RViz:
+```
+$ ros2 launch movement_controller movement_rviz.launch.py
+```
 3. Verify Execution:
-Check robot motion in RViz.
-Monitor cmd_vel messages:
-bash
-Copy
-Edit
-ros2 topic echo /cmd_vel
-Publish static transforms for visualization:
-bash
-Copy
-Edit
+- Check robot motion in RViz.
+- Monitor cmd_vel messages:
+```
+$ ros2 topic echo /cmd_vel
+```
+- Publish static transforms for visualization:
+```
 ros2 run tf2_ros static_transform_publisher 0.0 0 0. 0 0 0 map base_link
-Example YAML Configuration
-Here’s a sample YAML file for sequential movements:
+```
 
+## Example YAML Configuration
+Here’s a sample YAML file for sequential movements:
+```
 yaml
-Copy
-Edit
 - movement: rotation
   angle: 90    # Degrees
   speed: 0.5   # Angular velocity (rad/s)
@@ -96,28 +92,30 @@ Edit
 - movement: straight
   distance: 1.0  # Meters
   speed: 0.2     # Linear velocity (m/s)
-Testing
-Step 1: Run the GUI to generate a YAML file.
-Step 2: Launch the RViz visualization and movement controller node.
-Step 3: Monitor:
-Robot motion in RViz.
-Logs and cmd_vel messages for verification.
-Contributing
+```
+
+## Testing
+1. Step 1: Run the GUI to generate a YAML file.
+2. Step 2: Launch the RViz visualization and movement controller node.
+3. Step 3: Monitor:
+  - Robot motion in RViz.
+  - Logs and cmd_vel messages for verification.
+
+## Contributing
 Contributions are welcome to improve the project! Here’s how to contribute:
 
-Fork the repository.
-Create a feature branch:
-bash
-Copy
-Edit
+1. Fork the repository.
+2. Create a feature branch:
+```
 git checkout -b feature/your-feature
-Commit your changes:
-bash
-Copy
-Edit
+```
+3. Commit your changes:
+```
 git commit -m "Add your feature"
-Push to the branch and create a pull request.
-License
+```
+4. Push to the branch and create a pull request.
+
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 Contact
