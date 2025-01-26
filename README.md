@@ -1,90 +1,69 @@
-Sequential Motion YAML Creation GUI
+# Sequential Motion YAML Creation GUI
 A GUI and ROS2 Node for Configuring and Executing Sequential Robot Movements
-Overview
+
+## Overview
 This project provides a simple yet powerful tool to define, execute, and visualize sequential movements for a robot in a ROS2 environment. It includes:
 
-A YAML Configuration GUI to easily create YAML files for robot motion planning.
-A ROS2 Node that reads the YAML files, executes the movements, and visualizes them in RViz.
-Features
-YAML Configuration GUI (yaml_gui.py):
+1. A YAML Configuration GUI to easily create YAML files for robot motion planning.
+2. A ROS2 Node that reads the YAML files, executes the movements, and visualizes them in RViz.
 
-User-friendly interface built with Tkinter.
-Create, save, and edit YAML files that define:
-Rotational movements (left or right).
-Straight-line movements (forward or backward).
-ROS2 Node (controller_node.py):
+## Features
+1. YAML Configuration GUI (yaml_gui.py):  
+  - User-friendly interface built with Tkinter.
+  - Create, save, and edit YAML files that define:
+    -Rotational movements (left or right).
+    -Straight-line movements (forward or backward).
+2. ROS2 Node (controller_node.py):
+  - Reads YAML files and executes the defined movements.
+  - Publishes cmd_vel messages to control the robot.
+  - Visualizes the robot's position and orientation in RViz.
+  - Real-time updates using tf transformations.
+3. Visualization in RViz:
+  -Watch the robot's motion and verify the correctness of the planned sequence.
 
-Reads YAML files and executes the defined movements.
-Publishes cmd_vel messages to control the robot.
-Visualizes the robot's position and orientation in RViz.
-Real-time updates using tf transformations.
-Visualization in RViz:
-
-Watch the robot's motion and verify the correctness of the planned sequence.
-System Components
+## System Components
 1. YAML Configuration GUI
-Purpose: Create YAML files for movement planning.
-Capabilities:
-Add rotational and straight-line movements.
-Save the sequence as a YAML file for execution.
+- Purpose: Create YAML files for movement planning.
+- Capabilities:
+  - Add rotational and straight-line movements.
+  - Save the sequence as a YAML file for execution.
 2. ROS2 Node
-Purpose: Execute movements and visualize them in RViz.
-Capabilities:
-Read and parse YAML files (e.g., test_movement.yaml).
-Execute:
-Rotational movements: Rotate the robot by a specified angle at a defined speed.
-Straight-line movements: Move forward or backward by a specified distance at a defined speed.
-Publish transforms for RViz visualization.
-Log execution details for verification.
-Directory Structure
-bash
-Copy
-Edit
-ros2_movement_ws/
-├── src/
-│   ├── movement_controller/
-│   │   ├── movement_controller/
-│   │   │   ├── __init__.py
-│   │   │   ├── controller_node.py      # Executes movements and visualizes motion
-│   │   │   ├── yaml_gui.py             # GUI for YAML file creation
-│   │   ├── launch/
-│   │   │   ├── movement_rviz.launch.py # Launches RViz and the controller node
-│   │   ├── resource/
-│   │   │   ├── turtlebot_simple.urdf   # Robot model for visualization
-│   │   │   ├── test_movement.yaml      # Example YAML file
-│   │   │   ├── rviz_config.rviz        # RViz configuration file
-│   │   ├── CMakeLists.txt
-│   │   ├── package.xml
-Installation
-Clone the Repository:
+- Purpose: Execute movements and visualize them in RViz.
+- Capabilities:
+    - Read and parse YAML files (e.g., test_movement.yaml).
+    - Execute:
+        - Rotational movements: Rotate the robot by a specified angle at a defined speed.
+        - Straight-line movements: Move forward or backward by a specified distance at a defined speed.
+    - Publish transforms for RViz visualization.
+    - Log execution details for verification.
 
-bash
-Copy
-Edit
-git clone https://github.com/BojanAndonovski71/sequential-motion-yaml-creation-gui.git
-cd sequential-motion-yaml-creation-gui
-Build the ROS2 Workspace:
+## Installation
+1. Clone the Repository:
+```
+$ git clone https://github.com/BojanAndonovski71/sequential-motion-yaml-creation-gui.git
+$ cd sequential-motion-yaml-creation-gui
+```
 
-bash
-Copy
-Edit
-colcon build
-source install/setup.bash
-Install Dependencies:
+2. Build the ROS2 Workspace:
+```
+$ colcon build
+$ source install/setup.bash
+```
+
+3. Install Dependencies:
 
 Ensure ROS2 is installed on your system.
 Install any missing Python dependencies for the GUI:
-bash
-Copy
-Edit
+```
 pip install tkinter pyyaml
-Usage
+```
+
+## Usage
 1. Generate a YAML File:
 Run the YAML GUI:
-bash
-Copy
-Edit
+```
 ros2 run movement_controller yaml_gui
+```
 Define movements (rotations and straight-line motions) and save them as a YAML file.
 2. Execute Movements:
 Launch the movement controller and RViz:
